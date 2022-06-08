@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,5 +9,33 @@
 <a href="{% url 'book:add_genres' %}">Добавить жанр</a>
 <a href="{% url 'book:add_authors' %}">Добавить автора</a>
 <a href="{% url 'book:add_book' %}">Добавить книгу</a>
+<h1>Все книги</h1>
+<dev>
+    {% for book in books  %}
+        <p>Название по русски:{{ book.name_r }}</p>
+        <p>Название оригинала:{{ book.name_o }}</p>
+        <p>Цена книги:{{ book.price }}</p>
+        <p>Доступное количество:{{ book.count }}</p>
+        <p>Цена за день:{{ book.price_for_day }}</p>
+        <p>Год выхода книги:{{ book.year_of_made }}</p>
+        <p>Количество страниц:{{ book.count_of_pages }}</p>
+
+        {% for genre in genres %}
+
+            {% if book.genres__id == genre.id %}
+                <p>{{ genre.genre }}</p>
+            {% endif %}
+
+
+
+        {%  endfor %}
+
+
+    {%  endfor %}
+
+
+
+</dev>
+
 </body>
 </html>

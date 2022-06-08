@@ -95,7 +95,6 @@ def add_book(request):
                 book = Book.objects.get(pk=pk)
                 FotoBook.objects.create(foto=image, book=book)
 
-
             print(form.cleaned_data)
         else:
             print('Не зашло')
@@ -104,4 +103,20 @@ def add_book(request):
 
 
 def book(request):
-    return render(request, 'book.html')
+    books = Book.objects.all()
+    genres = Genres.objects.all()
+    authors = Authors.objects.all()
+    fotoAutors = FotosAuthor.objects.all()
+    fotoBooks = FotoBook.objects.all()
+
+    context = {
+        'books': books,
+        'genres': genres,
+        'authors': authors,
+        'fotoAutors': fotoAutors,
+        'fotoBooks': fotoBooks,
+    }
+    a = Book.objects.get(pk=6)
+    print(a.authors)
+
+    return render(request, 'book.html', context)
