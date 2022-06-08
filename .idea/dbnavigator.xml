@@ -41,6 +41,7 @@
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="ed5340d7-9cdc-490c-ab7e-3ef3c525d9f9" dataset="main.books_authors" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="ed5340d7-9cdc-490c-ab7e-3ef3c525d9f9" dataset="main.books_genres" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="ed5340d7-9cdc-490c-ab7e-3ef3c525d9f9" dataset="main.books_book_authors" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="ed5340d7-9cdc-490c-ab7e-3ef3c525d9f9" dataset="main.books_fotosauthor" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="ed5340d7-9cdc-490c-ab7e-3ef3c525d9f9" dataset="main.books_fotobook" active-filter-id="EMPTY_FILTER" />
   </component>

@@ -116,7 +116,11 @@ def book(request):
         'fotoAutors': fotoAutors,
         'fotoBooks': fotoBooks,
     }
-    a = Book.objects.get(pk=6)
-    print(a.authors)
+    # a = Genres.objects.get(pk=8)
+    # gen = Book.objects.filter(genres__id=8)
+    #gen = Genres.objects.filter(book__id=6)
+    # gen = genres.filter(book__id=6)
+    # print(gen)
+    #print(a.book_set.all())
 
     return render(request, 'book.html', context)
