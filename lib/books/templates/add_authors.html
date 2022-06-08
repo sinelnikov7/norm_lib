@@ -1,10 +1,37 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+<h1>Добовление автора</h1>
+<dev>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {%  csrf_token %}
 
+        {{ formAuthors.as_p }}
+        <button>Создать</button>
+
+    </form>
+
+</dev>
+<br>
+<h1>Все авторы</h1>
+<dev>
+  {% for i in author %}
+    <p>Имя: {{ i.firstName}}</p>
+    <p>Фамилия: {{ i.lastName}}</p>
+
+    <strong>Фотографии автора:</strong><br>
+        {% for n in foto %}
+            {% if n.authors_id == i.id %}
+                <img src="{{ n.foto.url }}" alt="Ошибка загрузки" width="200" height="100">
+            {% endif %}
+        {% endfor %}
+  {% endfor %}
+
+</dev>
 </body>
 </html>

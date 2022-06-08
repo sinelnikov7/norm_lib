@@ -1,10 +1,20 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+<h1>Добавить книгу</h1>
+<div>
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <p>{{ form.as_p }}</p>
+    <button>Создать</button>
+</div>
 
+
+</form>
 </body>
 </html>

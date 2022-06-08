@@ -15,11 +15,14 @@ class Authors(models.Model):
     lastName = models.CharField(max_length=50, verbose_name='Фамилия')
 
     def __str__(self):
-        return self.genre
+        return self.lastName
+
 #Фото авторов, где каждое фото будет ссылаться на Автора
 class FotosAuthor(models.Model):
     foto = models.ImageField(upload_to='authors')
     authors = models.ForeignKey(Authors, on_delete=models.CASCADE, related_name='authors')
+    def __str__(self):
+        return self.authors
 
 #Htubcnhfwbz rybub
 class Book(models.Model):
