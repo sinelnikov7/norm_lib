@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Вход</title>
+</head>
+<body>
+
+<h1> Вход</h1>
+<form method="" action="">
+    {% csrf_token %}
+    <input>Логин<br>
+    <input>Пароль<br>
+
+<form method="POST" action="">
+    {% csrf_token %}
+    {{ form.as_p }}<br>
+    <button>Регистрация</button>
+    <input type="reset">
+
+
+</form>
+
+
+</form>
+
+
+
+</body>
+</html>
