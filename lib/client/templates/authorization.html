@@ -1,20 +1,20 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Вход</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
 
 <h1> Вход</h1>
-<form method="" action="">
-    {% csrf_token %}
-    <input>Логин<br>
-    <input>Пароль<br>
 
-<form method="POST" action="">
+
+<form id="reg_form" method="POST" action="">
     {% csrf_token %}
     {{ form.as_p }}<br>
+    <p><label>Повторите пароль</label><input type="password" placeholder="повторите пароль" class="label_style" name="password_again"></p>
     <button>Регистрация</button>
     <input type="reset">
 
