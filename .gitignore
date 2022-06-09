@@ -5,3 +5,6 @@ __pycache__
 lib/books/__pycache__/models.cpython-310.pyc
 lib/books/__pycache__/views.cpython-310.pyc
 .idea/dbnavigator.xml
+lib/db.sqlite3
+migrations/
+**/migrations/
