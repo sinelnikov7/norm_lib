@@ -28,7 +28,11 @@
     <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
+<<<<<<< HEAD
     <connection id="ed5340d7-9cdc-490c-ab7e-3ef3c525d9f9">
+=======
+    <connection id="d6a150a3-524b-465c-a08c-18fc3ad03cb2">
+>>>>>>> a0acf7d651e11483b5b74a84117999423b028e88
       <console name="Connection" type="STANDARD" schema="main" session="Main" />
     </connection>
   </component>
@@ -36,6 +40,7 @@
     <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
+<<<<<<< HEAD
     <connection id="ed5340d7-9cdc-490c-ab7e-3ef3c525d9f9" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
@@ -44,6 +49,12 @@
     <filter-actions connection-id="ed5340d7-9cdc-490c-ab7e-3ef3c525d9f9" dataset="main.books_book_authors" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="ed5340d7-9cdc-490c-ab7e-3ef3c525d9f9" dataset="main.books_fotosauthor" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="ed5340d7-9cdc-490c-ab7e-3ef3c525d9f9" dataset="main.books_fotobook" active-filter-id="EMPTY_FILTER" />
+=======
+    <connection id="d6a150a3-524b-465c-a08c-18fc3ad03cb2" />
+  </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="d6a150a3-524b-465c-a08c-18fc3ad03cb2" dataset="main.client_client" active-filter-id="EMPTY_FILTER" />
+>>>>>>> a0acf7d651e11483b5b74a84117999423b028e88
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -74,7 +85,11 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
+<<<<<<< HEAD
       <connection id="ed5340d7-9cdc-490c-ab7e-3ef3c525d9f9" active="true" signed="true">
+=======
+      <connection id="d6a150a3-524b-465c-a08c-18fc3ad03cb2" active="true" signed="false">
+>>>>>>> a0acf7d651e11483b5b74a84117999423b028e88
         <database>
           <name value="Connection" />
           <description value="" />
@@ -89,7 +104,11 @@
           <port value="" />
           <database value="" />
           <files>
+<<<<<<< HEAD
             <file path="C:\Новая папка\norm_lib\lib\db.sqlite3" schema="main" />
+=======
+            <file path="C:\Users\Yauheniu\Desktop\Lib\norm_lib\lib\db.sqlite3" schema="main" />
+>>>>>>> a0acf7d651e11483b5b74a84117999423b028e88
           </files>
           <type value="NONE" />
           <user value="" />
@@ -131,7 +150,11 @@
           <alternative-statement-delimiter value="" />
         </details>
         <object-filters hide-empty-schemas="false" hide-pseudo-columns="false">
+<<<<<<< HEAD
           <object-type-filter>
+=======
+          <object-type-filter use-master-settings="true">
+>>>>>>> a0acf7d651e11483b5b74a84117999423b028e88
             <object-type name="SCHEMA" enabled="true" />
             <object-type name="USER" enabled="true" />
             <object-type name="ROLE" enabled="true" />
