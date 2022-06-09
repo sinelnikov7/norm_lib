@@ -37,13 +37,9 @@
             <strong>Фото автора:</strong>
             <br>
 
-                    {% for n in fotoAutors %}
+                    {% for image in autor.authors.all %}
 
-                    {% if n.authors_id == autor.id %}
-
-                    <img src="{{ n.foto.url }}" alt="Ошибка загрузки" width="200" height="100">
-
-                    {% endif %}
+                        <img src="{{ image.foto.url }}" alt="Ошибка загрузки" width="120" height="100">
 
                     {% endfor %}
 
@@ -51,20 +47,14 @@
     <br>
     <strong>Фото книги:</strong>
     <br>
-            {% for fotobook in fotoBooks %}
+            {% for image in book.fotobook.all %}
 
-
-            {% if fotobook.book_id == book.id %}
-
-            <img src="{{ fotobook.foto.url }}" alt="Ошибка загрузки" width="200" height="100">
-
-            {% endif %}
+            <img src="{{ image.foto.url }}" alt="Ошибка загрузки" width="120" height="100">
 
             {% endfor %}
 
     {% endfor %}
-
-
+    
 </dev>
 
 </body>

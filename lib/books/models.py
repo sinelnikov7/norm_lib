@@ -21,8 +21,8 @@ class Authors(models.Model):
 class FotosAuthor(models.Model):
     foto = models.ImageField(upload_to='authors')
     authors = models.ForeignKey(Authors, on_delete=models.CASCADE, related_name='authors')
-    def __str__(self):
-        return self.authors
+    # def __str__(self):
+    #     return self.authors
 
 #Htubcnhfwbz rybub
 class Book(models.Model):
@@ -45,6 +45,6 @@ class Book(models.Model):
 #Фото книги, где каждое фото будет ссылаться на Автора
 class FotoBook(models.Model):
     foto = models.ImageField(upload_to='books')
-    book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='book')
+    book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='fotobook')
 
 # Create your models here.
