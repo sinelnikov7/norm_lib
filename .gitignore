@@ -8,3 +8,4 @@ lib/books/__pycache__/views.cpython-310.pyc
 lib/db.sqlite3
 migrations/
 **/migrations/
+lib/media
