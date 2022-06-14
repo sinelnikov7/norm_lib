@@ -14,8 +14,6 @@
 <form id="reg_form" method="POST" action="">
     {% csrf_token %}
     {{ form.as_p }}<br>
-    <p><label>Повторите пароль</label><input type="password" placeholder="повторите пароль" class="label_style" name="password_again"></p>
-    <span>{{ errors }}</span>
     <button>Регистрация</button>
     <input type="reset">
 

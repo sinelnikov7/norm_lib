@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.contrib.auth.models import User
+from .models import Client
 from .forms import UserForm
 
 def authorization(request):
@@ -11,7 +11,7 @@ def authorization(request):
         form = UserForm(request.POST)
         if form.is_valid():
             if request.POST.get('password') == request.POST.get('password_again'):
-                user = User.objects.create_user(username=request.POST.get('username'),first_name=request.POST.get('first_name'),last_name=request.POST.get('last_name'),email=request.POST.get('email'),password=request.POST.get('password'))
+                user = Client(username=request.POST.get('username'),first_name=request.POST.get('first_name'),last_name=request.POST.get('last_name'),email=request.POST.get('email'),password=request.POST.get('password'))
                 user.save()
             else:
                 error = 'Пароль не совпадает'

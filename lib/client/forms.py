@@ -1,37 +1,45 @@
-from django.contrib.auth.models import User
+from .models import Client
 from django.forms import ModelForm, TextInput
 
 class UserForm(ModelForm):
     class Meta:
-        model = User
-        fields = ['username', 'first_name', 'last_name', 'email', 'password']
+        model = Client
+        fields = '__all__'
 
-        help_texts = {
-            'username': None,
-        }
+
 
         widgets = {
-            'username': TextInput(attrs={
+            'name': TextInput(attrs={
                 'class':'label_style',
-                'placeholder':'Введите логин'
+                'placeholder':'Имя'
             }),
-            'first_name': TextInput(attrs={
+            'sur_name': TextInput(attrs={
                 'class': 'label_style',
-                'placeholder': 'Имя'
+                'placeholder': 'Фамилия'
             }),
             'last_name': TextInput(attrs={
                 'class': 'label_style',
-                'placeholder': 'Фамилия'
+                'placeholder': 'Отчество'
             }),
             'email': TextInput(attrs={
                 'class': 'label_style',
                 'placeholder': 'Email',
                 'type':'email'
             }),
-            'password': TextInput(attrs={
+            'passport_number': TextInput(attrs={
                 'class': 'label_style',
-                'placeholder': 'Пароль',
-                'type': 'password'
-            })
+                'placeholder': 'Номер паспорта'
+
+            }),
+            'date':TextInput(attrs={
+                'class': 'label_style',
+                'placeholder': 'Дата рождения'
+
+            }),
+            'adres': TextInput(attrs={
+                'class': 'label_style',
+                'placeholder': 'Адресс'
+
+            }),
 
         }
