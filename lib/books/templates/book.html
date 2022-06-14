@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Books</title>
-</head>
-<body>
+{% extends 'main.html' %}
+{% block title %}Книги{% endblock %}
+{% block content %}
 <a href="{% url 'book:add_genres' %}">Добавить жанр</a>
 <a href="{% url 'book:add_authors' %}">Добавить автора</a>
 <a href="{% url 'book:add_book' %}">Добавить книгу</a>
@@ -57,5 +52,4 @@
 
 </dev>
 
-</body>
-</html>
+{% endblock %}

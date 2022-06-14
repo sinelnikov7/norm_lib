@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'main.html' %}
+{% block title %}Добавление книги{% endblock %}
+{% block content %}
 <h1>Добавить книгу</h1>
 <div>
 <form action="" method="POST" enctype="multipart/form-data">
@@ -16,5 +11,4 @@
 
 
 </form>
-</body>
-</html>
+{% endblock %}

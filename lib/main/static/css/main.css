@@ -1,0 +1,71 @@
+#header{
+   /*justify-content: space-between;*/
+    align-items:center;
+    width: 100%;
+
+    background: #091a20e0;
+    display:flex;
+}
+
+body{
+    background-image: url(https://s1.1zoom.ru/big3/911/Book_Library_464877.jpg);
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin:0;
+    padding:0;
+}
+
+
+.logo{
+    width: 100 px;
+    height: 100px;
+}
+
+
+a{
+  text-decoration: none;
+  color:white;
+  font-size: 24px;
+}
+
+#htext{
+    display:flex;
+    margin-left:50px;
+}
+
+#ha{
+    display:flex;
+    margin-left:20px;
+}
+
+a:hover {
+    color: #8af4ff; /* Цвет ссылки при наведении на нее курсора мыши */
+    text-decoration: underline; /* Добавляем подчеркивание */
+   }
+
+
+
+#disc1{
+    width:35%;
+    padding:50px;
+    color:white;
+    font-size:25px;
+    background: #2c0e0ea1;
+}
+
+#disc2{
+    width:35%;
+    color:white;
+    padding:50px;
+    font-size:25px;
+    background: #2c0e0ea1;
+}
+
+
+#disc{
+margin-top:50px;
+width: 100%;
+display:flex;
+justify-content: space-around;
+}
