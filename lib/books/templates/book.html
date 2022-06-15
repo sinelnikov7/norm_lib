@@ -24,12 +24,14 @@
                 <th> {% for genre in book.genres.all %}
                     {{ genre.genre }}<br>
                     {% endfor %}</th>
+                <th>{{ book.year_of_made }}</th>
                 <th>{{ book.count }}</th>
                 <th>{{ book.count_now }}</th>
             </tr>
         {% endfor %}
     </tbody>
 </table>
+    {{ book.count_now }}
 </div>
 
 {% endblock %}
