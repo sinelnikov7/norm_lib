@@ -1,61 +1,45 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Books</title>
-</head>
-<body>
-<a href="{% url 'book:add_genres' %}">Добавить жанр</a>
-<a href="{% url 'book:add_authors' %}">Добавить автора</a>
-<a href="{% url 'book:add_book' %}">Добавить книгу</a>
-<h1>Все книги</h1>
-<dev>
-    {% for book in books %}
-    <p>Название по русски:{{ book.name_r }}</p>
-    <p>Название оригинала:{{ book.name_o }}</p>
-    <p>Цена книги:{{ book.price }}</p>
-    <p>Доступное количество:{{ book.count }}</p>
-    <p>Цена за день:{{ book.price_for_day }}</p>
-    <p>Год выхода книги:{{ book.year_of_made }}</p>
-    <p>Количество страниц:{{ book.count_of_pages }}</p>
+{% extends 'main.html' %}
+{% block title %}Книги{% endblock %}
+{% block content %}
 
-    <strong>Жанры:</strong>
+<div id="navigation">
+    <div>
+        <p><a href="{% url 'book:add_genres' %}">Добавить жанр</a></p>
+        <p><a href="{% url 'book:add_authors' %}">Добавить автора</a></p>
+        <p><a href="{% url 'book:add_book' %}">Добавить книгу</a></p>
+    </div>
 
-            {% for genre in book.genres.all %}
+    <div id="all_book">
+        <div id="gen">
+            <h1>Все книги:</h1>
+            <table class="table_sort">
+                <thead>
+                <tr>
+                    <th>Наименование</th>
+                    <th>Жанр</th>
+                    <th>Год выпуска</th>
+                    <th>Общее количество экземпляров</th>
+                    <th>Доступно в данный момент</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for book in books %}
+                <tr>
+                    <th><a href="{% url 'book:book_detail' book.id %}" id="a_detail">{{ book.name_r }}</a></th>
+                    <th> {% for genre in book.genres.all %}
+                        {{ genre.genre }}<br>
+                        {% endfor %}
+                    </th>
+                    <th>{{ book.year_of_made }}</th>
+                    <th>{{ book.count }}</th>
+                    <th>{{ book.count_now }}</th>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            {{ book.count_now }}
+        </div>
+    </div>
 
-            <p>{{ genre.genre }}</p>
 
-            {% endfor %}
-
-    <strong>Авторы:</strong>
-
-            {% for autor in book.authors.all %}
-
-            <p>{{ autor.firstName }} {{ autor.lastName }}</p>
-
-            <strong>Фото автора:</strong>
-            <br>
-
-                    {% for image in autor.authors.all %}
-
-                        <img src="{{ image.foto.url }}" alt="Ошибка загрузки" width="120" height="100">
-
-                    {% endfor %}
-
-            {% endfor %}
-    <br>
-    <strong>Фото книги:</strong>
-    <br>
-            {% for image in book.fotobook.all %}
-
-            <img src="{{ image.foto.url }}" alt="Ошибка загрузки" width="120" height="100">
-
-            {% endfor %}
-
-    {% endfor %}
-
-</dev>
-
-</body>
-</html>
+    {% endblock %}

@@ -9,3 +9,6 @@ lib/db.sqlite3
 migrations/
 **/migrations/
 lib/media
+lib/client/__pycache__/forms.cpython-310.pyc
+lib/client/__pycache__/views.cpython-310.pyc
+lib/main/__pycache__/models.cpython-310.pyc

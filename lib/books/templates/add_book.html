@@ -1,20 +1,28 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>Добавить книгу</h1>
-<div>
-<form action="" method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    <p>{{ form.as_p }}</p>
-    <button>Создать</button>
-</div>
+{% extends 'main.html' %}
+{% block title %}Добавление книги{% endblock %}
+{% block content %}
+
+<div id="navigation">
+    <div>
+        <p><a href="{% url 'book:add_genres' %}">Добавить жанр</a></p>
+        <p><a href="{% url 'book:add_authors' %}">Добавить автора</a></p>
+        <p><a href="{% url 'book:add_book' %}">Добавить книгу</a></p>
+    </div>
+
+    <div id="book_detail">
+
+        <div>
+            <h1>Добавить книгу</h1>
+            <form action="" method="POST" enctype="multipart/form-data" id="genre">
+                {% csrf_token %}
+                <p>{{ form.as_p }}</p>
+                <button>Создать</button>
 
 
-</form>
-</body>
-</html>
+            </form>
+        </div>
+
+    </div>
+
+
+    {% endblock %}

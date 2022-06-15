@@ -7,11 +7,11 @@ from .models import Genres, Authors, FotosAuthor, Book, FotoBook
 # Добовление жанра
 
 def add_genres(request):
-    formGenre = Genre()
+    form = Genre()
     allGenres = Genres.objects.all()
 
     context = {
-        'formGenre': formGenre,
+        'form': form,
         'allGenres': allGenres,
     }
     if request.method == 'POST':
@@ -24,6 +24,14 @@ def add_genres(request):
             categor = request.POST.get('genre')
             print(categor)
             form.save()
+        else:
+            allGenres = Genres.objects.all()
+            context = {
+                'form': form,
+                'allGenres': allGenres,
+            }
+            print(form.errors)
+            return render(request, 'add_genres.html', context)
     return render(request, 'add_genres.html', context)
 
 
@@ -118,7 +126,7 @@ def book(request):
     }
     # a = Genres.objects.get(pk=8)
     # gen = Book.objects.filter(genres__id=8)
-    #gen = Genres.objects.filter(book__id=6)
+    # gen = Genres.objects.filter(book__id=6)
     # gen = genres.filter(book__id=6)
     # print(gen)
     # print(a.book_set.all())
@@ -126,3 +134,13 @@ def book(request):
     # print(fot.authors.all())
 
     return render(request, 'book.html', context)
+
+
+def book_detail(request, id):
+    book = Book.objects.get(id=id)
+    print(book)
+    context = {
+        'book': book,
+    }
+
+    return render(request, 'book_detail.html', context)

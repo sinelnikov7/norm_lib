@@ -33,6 +33,10 @@ class Book(models.Model):
         MinValueValidator(0, message='Минимальное количество составляет 0'),
         MaxValueValidator(10, message='Максимальное количество составляет 10')
     ])
+    count_now = models.IntegerField(default=10, validators=[
+        MinValueValidator(0, message='Минимальное количество составляет 0'),
+        MaxValueValidator(10, message='Максимальное количество составляет 10')
+    ])
     price_for_day = models.DecimalField(max_digits=6, decimal_places=2)
     year_of_made = models.IntegerField(max_length=4, error_messages={'maxLength':"Год может состоять из 4 чисел"})
     date_of_register = models.DateField(auto_now_add=True)
