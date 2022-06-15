@@ -7,11 +7,11 @@ from .models import Genres, Authors, FotosAuthor, Book, FotoBook
 # Добовление жанра
 
 def add_genres(request):
-    formGenre = Genre()
+    form = Genre()
     allGenres = Genres.objects.all()
 
     context = {
-        'formGenre': formGenre,
+        'form': form,
         'allGenres': allGenres,
     }
     if request.method == 'POST':
@@ -24,6 +24,14 @@ def add_genres(request):
             categor = request.POST.get('genre')
             print(categor)
             form.save()
+        else:
+            allGenres = Genres.objects.all()
+            context = {
+                'form': form,
+                'allGenres': allGenres,
+            }
+            print(form.errors)
+            return render(request, 'add_genres.html', context)
     return render(request, 'add_genres.html', context)
 
 
