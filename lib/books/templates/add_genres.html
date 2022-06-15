@@ -2,6 +2,7 @@
 {% block title %}Добавление жанра{% endblock %}
 {% block content %}
 <h1>Добавить жанр</h1>
+<div id="gen">
 <div>
 <form action="" method="POST" id="genre">
     {% csrf_token %}
@@ -17,6 +18,6 @@
     {% for i in allGenres %}
         <p>{{ i.genre }}</p>
     {% endfor %}
-</div>
+</div></div>
 
 {% endblock %}
