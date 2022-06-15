@@ -1,8 +1,16 @@
 {% extends 'main.html' %}
 {% block title %}Добавление жанра{% endblock %}
 {% block content %}
-<h1>Добавить жанр</h1>
-<div id="gen">
+<div id="navigation">
+    <div>
+<p><a href="{% url 'book:add_genres' %}">Добавить жанр</a></p>
+<p><a href="{% url 'book:add_authors' %}">Добавить автора</a></p>
+<p><a href="{% url 'book:add_book' %}">Добавить книгу</a></p>
+</div>
+
+<div id="book_detail">
+    <div id="gen">
+    <h1>Добавить жанр</h1>
 <div>
 <form action="" method="POST" id="genre">
     {% csrf_token %}
@@ -18,6 +26,29 @@
     {% for i in allGenres %}
         <p>{{ i.genre }}</p>
     {% endfor %}
+</div>
+
+
+
+
 </div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
 
 {% endblock %}

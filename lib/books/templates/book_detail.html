@@ -1,13 +1,15 @@
 {% extends 'main.html' %}
 {% block title %}Книги{% endblock %}
 {% block content %}
-<a href="{% url 'book:add_genres' %}">Добавить жанр</a>
-<a href="{% url 'book:add_authors' %}">Добавить автора</a>
-<a href="{% url 'book:add_book' %}">Добавить книгу</a>
-<h1>Все книги</h1>
+<div id="navigation">
+    <div>
+<p><a href="{% url 'book:add_genres' %}">Добавить жанр</a></p>
+<p><a href="{% url 'book:add_authors' %}">Добавить автора</a></p>
+<p><a href="{% url 'book:add_book' %}">Добавить книгу</a></p>
+</div>
 
-<div>
-    {% for book in books %}
+<div id="book_detail">
+    <h1>Описание книги:</h1>
     <p>Название по русски:{{ book.name_r }}</p>
     <p>Название оригинала:{{ book.name_o }}</p>
     <p>Цена книги:{{ book.price }}</p>
@@ -49,7 +51,7 @@
 
             {% endfor %}
 
-    {% endfor %}
 
-</div>
+
+</div></div>
 {% endblock %}

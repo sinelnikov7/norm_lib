@@ -29,6 +29,17 @@ a{
   font-size: 24px;
 }
 
+#a_detail{
+  text-decoration: none;
+  color:white;
+  font-size: 16px;
+}
+
+#a_detail:hover {
+    color: #8af4ff; /* Цвет ссылки при наведении на нее курсора мыши */
+    text-decoration: underline; /* Добавляем подчеркивание */
+   }
+
 #htext{
     display:flex;
     margin-left:50px;
@@ -51,7 +62,7 @@ a:hover {
     padding:50px;
     color:white;
     font-size:25px;
-    background: #2c0e0ea1;
+    background: #2f3e3e94;
 }
 
 #disc2{
@@ -59,7 +70,7 @@ a:hover {
     color:white;
     padding:50px;
     font-size:25px;
-    background: #2c0e0ea1;
+    background: #2f3e3e94;
 }
 
 
@@ -103,6 +114,7 @@ text-decoration: none solid rgb(68, 68, 68);
 font-style: italic;
 font-variant: normal;
 text-transform: none;
+padding-left:0%;
 }
 
 
@@ -201,3 +213,52 @@ th.sorted[data-order="1"]::after {
 	content: "▲"
 }
 
+#book_detail{
+    padding:10px;
+    padding-left:5%;
+    width:50%;
+    margin-left:10%;
+    margin-top:20px;
+    color:white;
+    font-size:25px;
+    background: #2f3e3e94;
+}
+
+#navigation{
+display:flex;
+}
+
+#all_book{
+
+    padding-left:5%;
+    padding-bottom:5%;
+    width:60%;
+    margin-left:5%;
+    margin-top:20px;
+    color:white;
+    font-size:16px;
+    background: #2f3e3e94;
+}
+
+label{
+color:white;
+}
+
+input[type="file"]{
+backface-visibility: hidden;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  white-space: nowrap;
+  background: #9ba1a3;
+  border-radius: 20px;
+  border: 0px solid #9c8f90;
+  border-width: 0px 0px 5px 0px;
+  padding: 9px 15px 6px 15px;
+  box-shadow: inset 0px 1px 3px rgba(255,255,255,.4);
+    color: #fff;
+  font-size: initial;
+  font-family: Arial;
+  font-weight: 900;
+  font-style: normal
+}

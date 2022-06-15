@@ -118,7 +118,7 @@ def book(request):
     }
     # a = Genres.objects.get(pk=8)
     # gen = Book.objects.filter(genres__id=8)
-    #gen = Genres.objects.filter(book__id=6)
+    # gen = Genres.objects.filter(book__id=6)
     # gen = genres.filter(book__id=6)
     # print(gen)
     # print(a.book_set.all())
@@ -126,3 +126,13 @@ def book(request):
     # print(fot.authors.all())
 
     return render(request, 'book.html', context)
+
+
+def book_detail(request, id):
+    book = Book.objects.get(id=id)
+    print(book)
+    context = {
+        'book': book,
+    }
+
+    return render(request, 'book_detail.html', context)
