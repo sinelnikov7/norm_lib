@@ -18,8 +18,8 @@ def authorization(request):
 
             }
             return render(request, 'authorization.html', context)
-
     return render(request, 'authorization.html', context)
+
 
 def list(request):
     clients = Client.objects.all()
