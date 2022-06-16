@@ -11,7 +11,7 @@ def authorization(request):
         form = UserForm(request.POST)
         if form.is_valid():
             form.save()
-            user.save()
+
         else:
             context ={
                 'form':form
@@ -22,5 +22,9 @@ def authorization(request):
     return render(request, 'authorization.html', context)
 
 def list(request):
+    clients = Client.objects.all()
+    context = {
+        'clients':clients
+    }
 
-    return render(request, 'clients.html')
+    return render(request, 'clients.html', context)

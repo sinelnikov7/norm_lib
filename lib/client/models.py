@@ -12,7 +12,7 @@ class Client(models.Model):
     adres = models.CharField(max_length=40, verbose_name="Адресс")
 
     def __str__(self):
-        return self.name + " " + self.surname
+        return self.name + " " + self.sur_name
 
     class Meta:
         verbose_name_plural = "Читатели"
