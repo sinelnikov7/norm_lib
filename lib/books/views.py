@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 
 from .forms import Genre, Author, AddBook
@@ -5,7 +6,7 @@ from .models import Genres, Authors, FotosAuthor, Book, FotoBook
 
 
 # Добовление жанра
-
+@login_required
 def add_genres(request):
     form = Genre()
     allGenres = Genres.objects.all()
@@ -36,7 +37,7 @@ def add_genres(request):
 
 
 # Добовление автора
-
+@login_required
 def add_authors(request):
     formAuthors = Author()
     author = Authors.objects.all()
@@ -65,7 +66,7 @@ def add_authors(request):
 
     return render(request, 'add_authors.html', context)
 
-
+@login_required
 def add_book(request):
     form = AddBook()
     context = {

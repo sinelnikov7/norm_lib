@@ -81,7 +81,7 @@ display:flex;
 justify-content: space-around;
 }
 
-input[type="text"],input[type="number"] {
+input[type="text"],input[type="number"],input[type="password"],input[type="submit"] {
   width:200px;
   padding:20px;
   box-sizing: border-box;
@@ -90,6 +90,20 @@ input[type="text"],input[type="number"] {
   padding:5px;
   margin-left:10px;
 }
+
+input[type="submit"] {
+  width:120px;
+  padding:20px;
+  box-sizing: border-box;
+  border-radius:7px;
+  box-shadow:0 0 15px 4px #241624;
+  padding:5px;
+  margin-left:10px;
+}
+
+
+
+
 #genre{
 font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 font-size: 22px;
@@ -163,7 +177,8 @@ button > i {
 
 
 #gen{
-margin-left:10px;
+margin-left:5%;
+margin-right:10%;
 }
 
 
@@ -232,8 +247,8 @@ display:flex;
 
     padding-left:5%;
     padding-bottom:5%;
-    width:60%;
-    margin-left:5%;
+    width:50%;
+    margin-left:10%;
     margin-top:20px;
     color:white;
     font-size:16px;
@@ -263,6 +278,7 @@ backface-visibility: hidden;
   font-style: normal
 }
 
+
 li {
     list-style-type: none; /* Убираем маркеры */
 }
@@ -276,4 +292,23 @@ ul {
 color:red;
 font-size:16px;
 font-family: sans-serif;
+}
+
+#auth{
+    padding:10px;
+    padding-left:5%;
+    width:50%;
+    margin-left:25%;
+    margin-top:20px;
+    color:white;
+    font-size:25px;
+    background: #2f3e3e94;
+}
+
+#error{
+
+color:red;
+font-size:16px;
+font-family: sans-serif;
+
 }
