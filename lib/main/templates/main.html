@@ -9,14 +9,14 @@
 
 </head>
 <body>
-<<<<<<< HEAD
 <header id="header">
     <a href="/">
         <img src="{% static 'img/logo.png' %} " alt="" class="logo"></a>
     <div id="htext">
         <div id="ha"><a href="/admin">Админка</a></div>
         <div id="ha"><a href="/book">Книги</a></div>
-        <div id="ha"><a href="autorized/">Регистрация нового читателя</a></div>
+        <div id="ha"><a href="/autorized">Регистрация нового читателя</a></div>
+        <div id="ha"><a href="{% url 'client:list' %}">Читатели</a></div>
         <div id="ha"><a href="autorized/">Выдача книг</a></div>
         <div id="ha"><a href="autorized/">Возврат книг</a></div>
         <div id="ha"><a href="{% url 'accounts:login' %}">Войти</a></div>
@@ -79,12 +79,5 @@
     {% endblock %}
 </main>
 <script src="{% static 'js/main.js' %}"></script>
-=======
-<h1>Hello</h1>
-<a href="/admin">Админка</a>
-<a href="/book">Книги</a>
-<a href="autorized/">Регистрация нового читателя</a>
-<a href="autorized/client">Читатели</a>
->>>>>>> de5bba6c8cc742d5cbecf608100ef13ee72407d6
 </body>
 </html>

@@ -22,15 +22,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
     path('book/', include('books.urls')),
-<<<<<<< HEAD
     path('autorized/', include('client.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/login/', include('django.contrib.auth.urls')),
     path('accounts/logout/', include('django.contrib.auth.urls')),
-=======
-    path('autorized/', include('client.urls'))
 
->>>>>>> de5bba6c8cc742d5cbecf608100ef13ee72407d6
+
 ]
 
 if settings.DEBUG:
