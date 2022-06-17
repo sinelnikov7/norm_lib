@@ -1,4 +1,5 @@
 from django.contrib.auth.decorators import login_required
+from django.db.models import Q
 from django.shortcuts import render
 
 from .forms import Genre, Author, AddBook
@@ -113,17 +114,9 @@ def add_book(request):
 
 def book(request):
     books = Book.objects.all()
-    genres = Genres.objects.all()
-    authors = Authors.objects.all()
-    fotoAutors = FotosAuthor.objects.all()
-    fotoBooks = FotoBook.objects.all()
-
     context = {
         'books': books,
-        'genres': genres,
-        'authors': authors,
-        'fotoAutors': fotoAutors,
-        'fotoBooks': fotoBooks,
+
     }
     # a = Genres.objects.get(pk=8)
     # gen = Book.objects.filter(genres__id=8)
@@ -135,6 +128,22 @@ def book(request):
     # print(fot.authors.all())
 
     return render(request, 'book.html', context)
+
+
+def get_book(request):
+    if request.method == "GET":
+        getBook = request.GET.get('book')
+        books = Book.objects.filter(Q(name_r_lower__contains=getBook))
+        print(getBook)
+        print(books)
+        context = {
+            'books': books,
+
+        }
+
+    return render(request, 'book.html', context)
+
+
 
 
 def book_detail(request, id):

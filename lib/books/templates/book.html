@@ -11,6 +11,11 @@
 
     <div id="all_book">
         <div id="gen">
+            <form action="{% url 'book:get_book' %}" method="GET">
+                {% csrf_token %}
+
+                <p>Поиск книг по имени:<input type="text" name="book" placeholder="Введите название книги">&#160;&#160;&#160;<button>Найти</button></p>
+            </form>
             <h1>Все книги:</h1>
             <table class="table_sort">
                 <thead>
