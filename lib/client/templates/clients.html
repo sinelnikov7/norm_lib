@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Читатели</title>
-</head>
-<body>
-<h1 align="center">Список читателей</h1>
-<table bgcolor="" align="center" border="2px">
+{% extends 'main.html' %}
+{% block title %}Читатели{% endblock %}
+{% block content %}
 
+
+<div id="all_clients">
+
+<h1>Список читателей:</h1>
+<table class="table_sort">
+    <thead>
     <tr>
         <td>Имя</td>
         <td>Фамилия</td>
@@ -17,24 +17,24 @@
         <td>Email</td>
         <td>Адресс</td>
     </tr>
+    </thead>
+    <tbody>
     {% for i in clients %}
     <tr>
-    <th><a href="">{{ i }}</a></th>
-    </tr>
-    <tr>
-    <td>{{ i.name }}</td>
-    <td>{{ i.sur_name }}</td>
-    <td>{{ i.last_name }}</td>
-    <td>{{ i.passport_number }}</td>
-    <td>{{ i.date }}</td>
-    <td>{{ i.email }}</td>
-    <td>{{ i.adres }}</td>
+
+
+    <th>{{ i.name }}</th>
+    <th>{{ i.sur_name }}</th>
+    <th>{{ i.last_name }}</th>
+    <th>{{ i.passport_number }}</th>
+    <th>{{ i.date }}</th>
+    <th>{{ i.email }}</th>
+    <th>{{ i.adres }}</th>
   </tr>
 
-
-
     {% endfor %}
+    <tbody>
 </table>
 
-</body>
-</html>
+</div>
+{% endblock %}

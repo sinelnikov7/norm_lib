@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Вход</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
-
-<h1> Вход</h1>
+{% extends 'main.html' %}
+{% block title %}Добавление жанра{% endblock %}
+{% block content %}
 
 
+<div id="create_user">
+        <div id="gen">
+            <h1>Регистрация читателя:</h1>
+            <div>
 <form id="reg_form" method="POST" action="">
     {% csrf_token %}
     {{ form.as_p }}<br>
@@ -21,9 +17,7 @@
 </form>
 
 
-</form>
+</form></div>
 
 
-
-</body>
-</html>
+{% endblock %}

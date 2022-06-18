@@ -23,3 +23,4 @@ lib/client/__pycache__/models.cpython-310.pyc
 .idea/misc.xml~7db96cce20c27b60a327b6264f222af7aac4841f
 .idea/norm_lib.iml~7db96cce20c27b60a327b6264f222af7aac4841f
 .idea/
+lib/client/__pycache__/urls.cpython-310.pyc

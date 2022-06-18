@@ -91,7 +91,7 @@ input[type="text"],input[type="number"],input[type="password"],input[type="submi
   margin-left:10px;
 }
 
-input[type="submit"] {
+input[type="submit"], input[type="reset"] {
   width:120px;
   padding:20px;
   box-sizing: border-box;
@@ -100,9 +100,6 @@ input[type="submit"] {
   padding:5px;
   margin-left:10px;
 }
-
-
-
 
 #genre{
 font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
@@ -133,7 +130,7 @@ padding-left:0%;
 
 
 button {
-    backface-visibility: hidden;
+  backface-visibility: hidden;
   position: relative;
   cursor: pointer;
   display: inline-block;
@@ -144,12 +141,13 @@ button {
   border-width: 0px 0px 5px 0px;
   padding: 9px 15px 6px 15px;
   box-shadow: inset 0px 1px 3px rgba(255,255,255,.4);
-    color: #fff;
+  color: #fff;
   font-size: initial;
   font-family: Arial;
   font-weight: 900;
   font-style: normal
   }
+
 button > div {
     color: #999;
   font-size: 10px;
@@ -159,8 +157,9 @@ button > div {
   text-align: center;
   margin: 0px 0px 0px 0px
   }
+
 button > i {
-    color: #fff;
+  color: #fff;
   font-size: 1em;
   background: rgba(0,0,0,0.2);
   border-radius: 100px;
@@ -171,6 +170,7 @@ button > i {
   position: static;
   box-shadow: inset 0px 1px 2px rgba(0,0,0,0.4),inset 0px -1px 0px rgba(255,255,255,.5)
   }
+
   .button > .ld {
     font-size: initial
   }
@@ -312,3 +312,30 @@ font-size:16px;
 font-family: sans-serif;
 
 }
+
+
+#all_clients{
+
+    padding-left:2%;
+    padding-right:2%;
+    padding-bottom:5%;
+    width:50%;
+    margin-left:25%;
+    margin-top:20px;
+    color:white;
+    font-size:16px;
+    background: #2f3e3e94;
+}
+
+
+#create_user{
+    padding:10px;
+    padding-left:5%;
+    width:50%;
+    margin-left:20%;
+    margin-top:20px;
+    color:white;
+    font-size:25px;
+    background: #2f3e3e94;
+}
+
