@@ -2,6 +2,7 @@ venv/
 __pycache__/
 __pycache__
 **/__pycache__/
+/__pycache__/
 lib/books/__pycache__/models.cpython-310.pyc
 lib/books/__pycache__/views.cpython-310.pyc
 .idea/dbnavigator.xml
@@ -22,3 +23,4 @@ lib/client/__pycache__/models.cpython-310.pyc
 .idea/
 lib/client/__pycache__/urls.cpython-310.pyc
 Ddecor.py
+lib/take_return_book/__pycache__/
