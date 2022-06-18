@@ -27,9 +27,14 @@ class FotosAuthor(models.Model):
 #Htubcnhfwbz rybub
 class Book(models.Model):
     name_r = models.CharField(max_length=50, verbose_name='Название на русском')
+    name_r_lower = models.CharField(max_length=50)
     name_o = models.CharField(max_length=50, verbose_name='Название на языке оригинала', null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     count = models.IntegerField(default=1, validators=[
+        MinValueValidator(0, message='Минимальное количество составляет 0'),
+        MaxValueValidator(10, message='Максимальное количество составляет 10')
+    ])
+    count_now = models.IntegerField(default=10, validators=[
         MinValueValidator(0, message='Минимальное количество составляет 0'),
         MaxValueValidator(10, message='Максимальное количество составляет 10')
     ])
@@ -40,6 +45,10 @@ class Book(models.Model):
         MinValueValidator(1, message='Минимальное количество страниц должно составлять 1')])
     genres = models.ManyToManyField(Genres)
     authors = models.ManyToManyField(Authors)
+
+    def save(self):
+        self.name_r_lower = self.name_r.lower() if self.name_r else None
+        return super().save(self.name_r_lower)
 
 
 #Фото книги, где каждое фото будет ссылаться на Автора

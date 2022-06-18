@@ -1,3 +1,5 @@
+from django.contrib.auth.decorators import login_required
+from django.db.models import Q
 from django.shortcuts import render
 
 from .forms import Genre, Author, AddBook
@@ -5,13 +7,13 @@ from .models import Genres, Authors, FotosAuthor, Book, FotoBook
 
 
 # Добовление жанра
-
+@login_required
 def add_genres(request):
-    formGenre = Genre()
+    form = Genre()
     allGenres = Genres.objects.all()
 
     context = {
-        'formGenre': formGenre,
+        'form': form,
         'allGenres': allGenres,
     }
     if request.method == 'POST':
@@ -24,11 +26,19 @@ def add_genres(request):
             categor = request.POST.get('genre')
             print(categor)
             form.save()
+        else:
+            allGenres = Genres.objects.all()
+            context = {
+                'form': form,
+                'allGenres': allGenres,
+            }
+            print(form.errors)
+            return render(request, 'add_genres.html', context)
     return render(request, 'add_genres.html', context)
 
 
 # Добовление автора
-
+@login_required
 def add_authors(request):
     formAuthors = Author()
     author = Authors.objects.all()
@@ -57,7 +67,7 @@ def add_authors(request):
 
     return render(request, 'add_authors.html', context)
 
-
+@login_required
 def add_book(request):
     form = AddBook()
     context = {
@@ -104,21 +114,13 @@ def add_book(request):
 
 def book(request):
     books = Book.objects.all()
-    genres = Genres.objects.all()
-    authors = Authors.objects.all()
-    fotoAutors = FotosAuthor.objects.all()
-    fotoBooks = FotoBook.objects.all()
-
     context = {
         'books': books,
-        'genres': genres,
-        'authors': authors,
-        'fotoAutors': fotoAutors,
-        'fotoBooks': fotoBooks,
+
     }
     # a = Genres.objects.get(pk=8)
     # gen = Book.objects.filter(genres__id=8)
-    #gen = Genres.objects.filter(book__id=6)
+    # gen = Genres.objects.filter(book__id=6)
     # gen = genres.filter(book__id=6)
     # print(gen)
     # print(a.book_set.all())
@@ -126,3 +128,29 @@ def book(request):
     # print(fot.authors.all())
 
     return render(request, 'book.html', context)
+
+
+def get_book(request):
+    if request.method == "GET":
+        getBook = request.GET.get('book')
+        books = Book.objects.filter(Q(name_r_lower__contains=getBook))
+        print(getBook)
+        print(books)
+        context = {
+            'books': books,
+
+        }
+
+    return render(request, 'book.html', context)
+
+
+
+
+def book_detail(request, id):
+    book = Book.objects.get(id=id)
+    print(book)
+    context = {
+        'book': book,
+    }
+
+    return render(request, 'book_detail.html', context)

@@ -1,27 +1,38 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>Добавить жанр</h1>
-<dev>
-<form action="" method="POST">
-    {% csrf_token %}
+{% extends 'main.html' %}
+{% block title %}Добавление жанра{% endblock %}
+{% block content %}
+<div id="navigation">
+    <div>
+        <p><a href="{% url 'book:add_genres' %}">Добавить жанр</a></p>
+        <p><a href="{% url 'book:add_authors' %}">Добавить автора</a></p>
+        <p><a href="{% url 'book:add_book' %}">Добавить книгу</a></p>
+    </div>
 
-    <p>{{ formGenre.as_p }}</p>
+    <div id="book_detail">
+        <div id="gen">
+            <h1>Добавить жанр</h1>
+            <div>
+                <form action="" method="POST" id="genre">
+                    {% csrf_token %}
 
-    <button>Создать</button>
-</dev>
-<br>
-<h1>Все жанры</h1>
-<dev>
-    {% for i in allGenres %}
-        <p>{{ i.genre }}</p>
-    {% endfor %}
-</dev>
-</form>
-</body>
-</html>
+                    <p>{{ form.as_p }}</p>
+
+                    <button>Создать</button>
+                </form>
+            </div>
+            <br>
+            <h1>Все жанры</h1>
+            <div>
+                {% for i in allGenres %}
+                <p>{{ i.genre }}</p>
+                {% endfor %}
+            </div>
+
+
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock %}
