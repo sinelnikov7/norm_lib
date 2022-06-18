@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Читатели</title>
+</head>
+<body>
+<h1 align="center">Список читателей</h1>
+<table bgcolor="" align="center" border="2px">
+
+    <tr>
+        <td>Имя</td>
+        <td>Фамилия</td>
+        <td>Отчество</td>
+        <td>Номер паспорта</td>
+        <td>Дата рождения</td>
+        <td>Email</td>
+        <td>Адресс</td>
+    </tr>
+    {% for i in clients %}
+    <tr>
+    <th><a href="">{{ i }}</a></th>
+    </tr>
+    <tr>
+    <td>{{ i.name }}</td>
+    <td>{{ i.sur_name }}</td>
+    <td>{{ i.last_name }}</td>
+    <td>{{ i.passport_number }}</td>
+    <td>{{ i.date }}</td>
+    <td>{{ i.email }}</td>
+    <td>{{ i.adres }}</td>
+  </tr>
+
+
+
+    {% endfor %}
+</table>
+
+</body>
+</html>
