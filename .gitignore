@@ -27,3 +27,6 @@ lib/take_return_book/__pycache__/
 lib/gcbfc.py
 lib/main/templates/inex.html
 lib/main/__pycache__/
+lib/client/__pycache__/
+lib/books/__pycache__/
+lib/lib/__pycache__/
