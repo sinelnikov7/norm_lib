@@ -23,11 +23,15 @@ urlpatterns = [
     path('', include('main.urls')),
     path('book/', include('books.urls')),
     path('autorized/', include('client.urls')),
+<<<<<<< HEAD
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/login/', include('django.contrib.auth.urls')),
     path('accounts/logout/', include('django.contrib.auth.urls')),
 
 
+=======
+    path('take_return_book/', include('take_return_book.urls')),
+>>>>>>> nat
 ]
 
 if settings.DEBUG:

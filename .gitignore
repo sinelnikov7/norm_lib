@@ -24,9 +24,15 @@ lib/client/__pycache__/models.cpython-310.pyc
 lib/client/__pycache__/urls.cpython-310.pyc
 Ddecor.py
 lib/take_return_book/__pycache__/
+
 lib/gcbfc.py
 lib/main/templates/inex.html
 lib/main/__pycache__/
 lib/client/__pycache__/
 lib/books/__pycache__/
 lib/lib/__pycache__/
+
+lib/client/__pycache__/
+lib/books/__pycache__/
+lib/take_return_book/__pycache__/
+
