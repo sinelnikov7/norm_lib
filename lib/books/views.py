@@ -108,7 +108,13 @@ def add_book(request):
             print(form.cleaned_data)
         else:
             print('Не зашло')
-            pass
+
+            context = {
+                'form': form,
+            }
+            print(form.errors)
+            return render(request, 'add_book.html', context)
+
     return render(request, 'add_book.html', context)
 
 
