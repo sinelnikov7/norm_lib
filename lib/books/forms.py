@@ -8,7 +8,8 @@ from .models import Genres, Authors
 
 
 class Genre(forms.ModelForm):
-    genre = forms.CharField(max_length=50, label='Жанр')
+    genre = forms.CharField(max_length=50, label='Жанр', error_messages={'unique':"Такой жанр уже добавлен"}, help_text='Введите имя жанра',
+                            widget=forms.TextInput(attrs={'placeholder': 'Введите имя жанра'}))
 
     class Meta:
         model = Genres

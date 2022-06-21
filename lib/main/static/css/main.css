@@ -91,7 +91,7 @@ input[type="text"],input[type="number"],input[type="password"],input[type="submi
   margin-left:10px;
 }
 
-input[type="submit"], input[type="reset"] {
+input[type="submit"], input[type="reset"], input[type="email"] {
   width:120px;
   padding:20px;
   box-sizing: border-box;
@@ -339,3 +339,11 @@ font-family: sans-serif;
     background: #2f3e3e94;
 }
 
+form p{
+    color:white;
+    font-size:16px;
+}
+#reg_form p {
+    color:white;
+    font-size:16px;
+}

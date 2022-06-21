@@ -15,7 +15,10 @@
                 <form action="" method="POST" id="genre">
                     {% csrf_token %}
 
-                    <p>{{ form.as_p }}</p>
+                    <p> {{ form.genre.label_tag }} {{ form.genre  }} &#160; {{ form.genre.help_text }} </p>
+
+                    <p>{{ form.genre.errors }}</p>
+
 
                     <button>Создать</button>
                 </form>
