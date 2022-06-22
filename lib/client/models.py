@@ -10,6 +10,7 @@ class Client(models.Model):
     date = models.DateField(verbose_name="Дата рождения")
     email = models.EmailField(max_length=40, unique=True, verbose_name="Email")
     adres = models.CharField(max_length=40, verbose_name="Адресс")
+    canGet = models.BooleanField(default=True)
 
     def __str__(self):
         return self.name + " " + self.sur_name

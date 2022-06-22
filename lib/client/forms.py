@@ -4,7 +4,7 @@ from django.forms import ModelForm, TextInput
 class UserForm(ModelForm):
     class Meta:
         model = Client
-        fields = '__all__'
+        fields = ['name', 'sur_name', 'last_name', 'passport_number', 'date', 'email', 'adres']
 
 
 
