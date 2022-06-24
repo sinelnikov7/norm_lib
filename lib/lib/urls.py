@@ -26,8 +26,7 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/login/', include('django.contrib.auth.urls')),
     path('accounts/logout/', include('django.contrib.auth.urls')),
-
-
+    path('take_return_book/', include('take_return_book.urls')),
 ]
 
 if settings.DEBUG:

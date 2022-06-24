@@ -91,7 +91,7 @@ input[type="text"],input[type="number"],input[type="password"],input[type="submi
   margin-left:10px;
 }
 
-input[type="submit"], input[type="reset"] {
+input[type="submit"], input[type="reset"], input[type="email"] {
   width:120px;
   padding:20px;
   box-sizing: border-box;
@@ -179,6 +179,7 @@ button > i {
 #gen{
 margin-left:5%;
 margin-right:10%;
+padding-top:20px;
 }
 
 
@@ -199,7 +200,7 @@ margin-right:10%;
 
 .table_sort td,
 .table_sort th {
-    width: 150px;
+    width: 1000px;
     height: 40px;
     text-align: center;
 
@@ -247,7 +248,7 @@ display:flex;
 
     padding-left:5%;
     padding-bottom:5%;
-    width:50%;
+    width:60%;
     margin-left:10%;
     margin-top:20px;
     color:white;
@@ -339,3 +340,11 @@ font-family: sans-serif;
     background: #2f3e3e94;
 }
 
+form p{
+    color:white;
+    font-size:16px;
+}
+#reg_form p {
+    color:white;
+    font-size:16px;
+}

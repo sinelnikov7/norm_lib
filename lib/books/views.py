@@ -108,7 +108,13 @@ def add_book(request):
             print(form.cleaned_data)
         else:
             print('Не зашло')
-            pass
+
+            context = {
+                'form': form,
+            }
+            print(form.errors)
+            return render(request, 'add_book.html', context)
+
     return render(request, 'add_book.html', context)
 
 
@@ -133,9 +139,7 @@ def book(request):
 def get_book(request):
     if request.method == "GET":
         getBook = request.GET.get('book')
-        books = Book.objects.filter(Q(name_r_lower__contains=getBook))
-        print(getBook)
-        print(books)
+        books = Book.objects.filter(Q(name_r__contains=getBook.title()))
         context = {
             'books': books,
 

@@ -39,16 +39,21 @@ class Book(models.Model):
         MaxValueValidator(10, message='Максимальное количество составляет 10')
     ])
     price_for_day = models.DecimalField(max_digits=6, decimal_places=2)
-    year_of_made = models.IntegerField(max_length=4, error_messages={'maxLength':"Год может состоять из 4 чисел"})
+    year_of_made = models.IntegerField()
     date_of_register = models.DateField(auto_now_add=True)
     count_of_pages = models.IntegerField(default=1, validators=[
         MinValueValidator(1, message='Минимальное количество страниц должно составлять 1')])
     genres = models.ManyToManyField(Genres)
     authors = models.ManyToManyField(Authors)
 
-    def save(self):
-        self.name_r_lower = self.name_r.lower() if self.name_r else None
-        return super().save(self.name_r_lower)
+    # def save(self):
+    #     self.name_r_lower = self.name_r.lower() if self.name_r else None
+    #     return super().save(self.name_r_lower)
+
+    def __str__(self):
+
+
+        return self.name_r
 
 
 #Фото книги, где каждое фото будет ссылаться на Автора
