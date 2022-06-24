@@ -56,7 +56,7 @@ def take_book(request):
             return render(request, 'take_book.html', context)
     return render(request, 'take_book.html', context)
 
-
+@login_required
 def all_take(request):
     all_take = ActGiveOut.objects.all()
     context = {
@@ -103,7 +103,7 @@ def search_take(request):
 
     return render(request, 'all_take.html', context)
 
-
+@login_required
 def order_edit(request, id):
     # order = get_object_or_404(ActGiveOut, id)
 
