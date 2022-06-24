@@ -37,3 +37,4 @@ lib/books/__pycache__/
 lib/take_return_book/__pycache__/
 .idea/inspectionProfiles/profiles_settings.xml
 lib/dobook/
+lib/client/__pycache__/admin.cpython-310.pyc

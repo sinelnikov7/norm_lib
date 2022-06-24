@@ -2,6 +2,10 @@ from django.forms import ModelForm
 from django.core.exceptions import ValidationError
 from .models import ActGiveOut
 from client.models import Client
+from books.models import Book
+from django.core.validators import MinValueValidator, MaxValueValidator
+from django.forms import ModelMultipleChoiceField
+from django import forms
 
 
 class ActGiveOutForm(ModelForm):
@@ -25,3 +29,15 @@ class ActGiveOutForm(ModelForm):
     class Meta:
         model = ActGiveOut
         fields = ['client', 'count_of_day', 'booksGot']
+
+
+class OrderEdit(ModelForm):
+    # booksMustReturn = forms.CharField(widget=forms.CheckboxSelectMultiple)
+    booksMustReturn = ModelMultipleChoiceField(
+        queryset=Book.objects.all(),
+        widget=forms.CheckboxSelectMultiple,
+        label='Выберите жанры'
+    )
+    class Meta:
+        model = ActGiveOut
+        fields = ['booksMustReturn']

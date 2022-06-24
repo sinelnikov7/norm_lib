@@ -46,9 +46,9 @@ class Book(models.Model):
     genres = models.ManyToManyField(Genres)
     authors = models.ManyToManyField(Authors)
 
-    def save(self):
-        self.name_r_lower = self.name_r.lower() if self.name_r else None
-        return super().save(self.name_r_lower)
+    # def save(self):
+    #     self.name_r_lower = self.name_r.lower() if self.name_r else None
+    #     return super().save(self.name_r_lower)
 
     def __str__(self):
 
